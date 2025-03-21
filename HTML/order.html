@@ -1,0 +1,121 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pide tu Trixy</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <div class="header-left">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <a href="../index.html" alt="Logo Trixy" class="logo">
+                <img id="logo" src="../IMG/LOGO.png" width="45">
+            </a>
+            <h1 class="title">Trixy</h1>
+        </div>
+        <a href="../HTML/SignIn.html" class="login-btn">Iniciar Sesión</a>
+        
+        <nav class="sidebar">
+            <label for="menu-toggle" class="close-btn">×</label>
+            <a href="../HTML/WorkWithUs.html">Trabaja Con Nosotros</a>
+            <a href="../HTML/planes.html">Planes Premium</a>
+            <a href="../HTML/order.html">Pide tu Trixy</a>
+            <a href="../HTML/fqa.html">Preguntas Frecuentes</a>
+        </nav>
+    </header>
+
+    <main class="vtc-contenedor">
+        <div class="vtc-cuadricula-reserva">
+            <div class="vtc-formulario-reserva">
+                <h1 class="vtc-titulo-principal">Viaja a cualquier lugar con nuestra app.</h1>
+
+                <div class="vtc-grupo-entrada">
+                    <div class="vtc-control-formulario">
+                        <label for="vtc-origen">Ubicación de recogida</label>
+                        <input type="text" id="vtc-origen" placeholder="Introduce el punto de partida">
+                    </div>
+
+                    <div class="vtc-control-formulario">
+                        <label for="vtc-destino">Ubicación de destino</label>
+                        <input type="text" id="vtc-destino" placeholder="¿A dónde vas?">
+                    </div>
+
+                    <div class="vtc-grupo-fecha-hora">
+                        <button class="vtc-boton-fecha-hora">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Seleccionar fecha
+                        </button>
+                        <button class="vtc-boton-fecha-hora">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="vtc-planes">
+                    <label class="vtc-opcion-plan">
+                        <input type="radio" name="plan" class="vtc-radio-plan" value="estandar" checked>
+                        <div class="vtc-detalles-plan">
+                            <div class="vtc-nombre-plan">Plan Estándar</div>
+                            <div class="vtc-descripcion-plan">Viaje cómodo para hasta 4 pasajeros</div>
+                        </div>
+                        <div class="vtc-precio-plan">25€</div>
+                    </label>
+
+                    <label class="vtc-opcion-plan">
+                        <input type="radio" name="plan" class="vtc-radio-plan" value="ecotrixy">
+                        <div class="vtc-detalles-plan">
+                            <div class="vtc-nombre-plan">Plan EcoTrixy</div>
+                            <div class="vtc-descripcion-plan">Opción ecológica y económica</div>
+                        </div>
+                        <div class="vtc-precio-plan">20€</div>
+                    </label>
+
+                    <label class="vtc-opcion-plan">
+                        <input type="radio" name="plan" class="vtc-radio-plan" value="premium">
+                        <div class="vtc-detalles-plan">
+                            <div class="vtc-nombre-plan">Plan Premium</div>
+                            <div class="vtc-descripcion-plan">Experiencia de lujo con vehículo de alta gama</div>
+                        </div>
+                        <div class="vtc-precio-plan">40€</div>
+                    </label>
+                </div>
+
+                <button class="vtc-boton-enviar">Continuar con el pago</button>
+            </div>
+
+            <div id="vtc-mapa">
+                <iframe id="order-google" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11942.944072729751!2d1.8967522158691406!3d41.553312647819865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1740150360655!5m2!1ses!2ses" width="700" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61573387371493" target="_blank" class="social-icon">
+                <img src="../IMG/FB.png" alt="Facebook" class="social-icon-img">
+            </a>
+            <a href="https://x.com/TrixySpain" target="_blank" class="social-icon">
+                <img src="../IMG/X.png" alt="X" class="social-icon-img">
+            </a>
+            <a href="https://www.instagram.com/trixy/" target="_blank" class="social-icon">
+                <img src="../IMG/IG.png" alt="Instagram" class="social-icon-img">
+            </a>
+        </div>
+        <div class="footer-buttons">
+            <a href="../HTML/support.html" class="footer-btn">Soporte</a>
+            <a href="../HTML/AMirRoyo.html" class="footer-btn">AMirRoyo</a> 
+        </div>
+    </footer>
+</body>
+</html>

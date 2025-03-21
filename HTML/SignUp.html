@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu cuenta</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/SignIn.css">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <div class="header-left">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <a href="../index.html" alt="Logo Trixy" class="logo">
+                <img id="logo" src="../IMG/LOGO.png" width="45">
+            </a>
+            <h1 class="title">Trixy</h1>
+        </div>
+
+        
+        <nav class="sidebar">
+            <label for="menu-toggle" class="close-btn">×</label>
+            <a href="../HTML/WorkWithUs.html">Trabaja Con Nosotros</a>
+            <a href="../HTML/planes.html">Planes Premium</a>
+            <a href="../HTML/order.html">Pide tu Trixy</a>
+            <a href="../HTML/fqa.html">Preguntas Frecuentes</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container"> <!-- Contenedor principal para centrar y organizar el contenido -->
+            <h1 id="crear_cnt">Crear Cuenta</h1> <!-- Título principal de la página -->
+            <form action="registro.php" method="post"> 
+                <!-- Formulario que envía los datos a "registro.php"-->
+                
+                <!-- Campo para ingresar el nombre -->
+                <label for="nombre">Nombre</label> 
+                <input type="text" id="nombre" name="nombre" required> 
+                <!-- El atributo "required" hace que este campo sea obligatorio -->
+                
+                <!-- Campo para ingresar el apellido -->
+                <label for="apellido">Apellido</label> 
+                <input type="text" id="apellido" name="apellido" required> 
+                
+                <!-- Campo para ingresar el nombre de usuario -->
+                <label for="nombre_usuario">Nombre de Usuario</label> 
+                <input type="text" id="nombre_usuario" name="nombre_usuario" required> 
+                
+                <!-- Campo para ingresar el correo electrónico -->
+                <label for="correo">Correo Electrónico</label> 
+                <input type="email" id="correo" name="correo" required> 
+                <!-- El tipo "email" valida que el usuario ingrese un correo electrónico válido -->
+                
+                <!-- Campo para ingresar la contraseña -->
+                <label for="contraseña">Contraseña</label> 
+                <input type="password" id="contraseña" name="contraseña" required> 
+                <!-- El tipo "password" oculta el texto mientras se escribe -->
+    
+                <!-- Campo para repetir la contraseña -->
+                <label for="repetir_contraseña">Repetir Contraseña</label> 
+                <input type="password" id="repetir_contraseña" name="repetir_contraseña" required> 
+                
+
+                <a href="../index.html" class="button">Crear Cuenta</a> 
+                
+                <!-- Texto que redirige a la página de inicio de sesión si ya tiene cuenta -->
+                <p id="p1">¿Ya has creado tu cuenta? <a id="iniciar" href="SignIn.html">Iniciar sesión</a></p> 
+                <!-- "id=p1" permite estilizar este párrafo desde el CSS o interactuar con él en JavaScript -->
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61573387371493" target="_blank" class="social-icon">
+                <img src="../IMG/FB.png" alt="Facebook" class="social-icon-img">
+            </a>
+            <a href="https://x.com/TrixySpain" target="_blank" class="social-icon">
+                <img src="../IMG/X.png" alt="X" class="social-icon-img">
+            </a>
+            <a href="https://www.instagram.com/trixy/" target="_blank" class="social-icon">
+                <img src="../IMG/IG.png" alt="Instagram" class="social-icon-img">
+            </a>
+        </div>
+        <div class="footer-buttons">
+            <a href="../HTML/support.html" class="footer-btn">Soporte</a>
+            <a href="../HTML/AMirRoyo.html" class="footer-btn">AMirRoyo</a> 
+        </div>
+    </footer>
+</body>
+</html>
+

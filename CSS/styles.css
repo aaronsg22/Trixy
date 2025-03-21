@@ -1,0 +1,773 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 60px; /* Ajusta este valor según la altura de tu footer */
+}
+
+header {
+  background-color: #000000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon,
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* Inicio Framework para los botones de login https://uiverse.io/suda-code/loud-badger-55 */
+.login-btn {
+  text-decoration: none;
+  background-color: #df1b1b;
+  border-radius: 4px;
+  gap: 10px;
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.login-btn:hover {
+  background-color: #333;
+  box-shadow: 0 0 20px #ffffff50;
+  transform: scale(1.1);
+}
+
+.login-btn:active {
+  background-color: red;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+/*Fin Framework para los botones de login https://uiverse.io/suda-code/loud-badger-55 */
+
+main {
+  margin-top: 60px; /* Ajusta este valor según la altura de tu header */
+  padding: 20px;
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #000000;
+  padding-top: 60px;
+  z-index: 1001; /* Asegura que el sidebar esté por encima del header */
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Efecto hover para los enlaces */
+.sidebar a:hover {
+  background-color: #f0f0f0;
+  color: #ff4444; /* Color rojo al hacer hover */
+  transform: translateX(5px); /* Pequeño desplazamiento al hacer hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+
+.menu-toggle:checked ~ .sidebar {
+  display: block;
+}
+
+main {
+  margin-top: 60px;
+  padding: 0; /* Removemos el padding para que la imagen ocupe todo el ancho */
+}
+
+/* Estilos del carrusel */
+/*Carrusel extraido del apartado de comunidad de V0 y editado tanto manualmente algunas cosas como son un poco de ayuda de IA*/
+#contenedor-carrusel {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+#carrusel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#carrusel input[type="radio"] {
+  display: none;
+}
+
+#slides {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#overflow {
+  width: 300%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#slide {
+  width: 33.33%;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+#slide-contenido {
+  width: 100%;
+  height: 100%;
+}
+
+#slide-contenido img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#slide-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#slide-texto h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#slide-texto p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#boton {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#boton:hover {
+  background-color: #f0f0f0;
+}
+
+#controles {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+#controles label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#slide1:checked ~ #slides #overflow {
+  margin-left: 0;
+}
+#slide2:checked ~ #slides #overflow {
+  margin-left: -100%;
+}
+#slide3:checked ~ #slides #overflow {
+  margin-left: -200%;
+}
+
+#slide1:checked ~ #controles label:nth-child(1),
+#slide2:checked ~ #controles label:nth-child(2),
+#slide3:checked ~ #controles label:nth-child(3) {
+  background-color: #c300ff;
+}
+
+#slides #overflow {
+  transition: all 0.3s ease;
+}
+
+/* Nuevo: Estilos para las secciones de contenido */
+.content-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #000000;
+  border-radius: 8px;
+}
+
+.content-text {
+  flex: 1;
+  padding-right: 20px;
+  color:#ffffff
+}
+
+.content-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foto_pequeña {
+  width: 50px;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
+  }
+
+  .content-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .content-text {
+    padding-right: 0;
+  }
+}
+
+/* Estilos del Footer */
+footer {
+  background-color: #000000;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Esto hace que el footer sea fijo */
+  bottom: 0; /* Lo coloca en la parte inferior */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-img {
+  width: 24px; /* Ajusta este valor según el tamaño que desees */
+  height: 24px; /* Ajusta este valor según el tamaño que desees */
+}
+
+/* Inicio Framework para los botones del footer https://uiverse.io/suda-code/loud-badger-55 */
+.footer-btn {
+  text-decoration: none;
+  background-color: #df1b1b;
+  border-radius: 100px;
+  padding: 12.5px 30px;
+  border: 0;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.footer-btn:hover {
+  background-color: #333;
+  box-shadow: 0 0 20px #ffffff50;
+  transform: scale(1.1);
+}
+
+.footer-btn:active {
+  background-color: red;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+/*Fin Framework para los botones del footer https://uiverse.io/suda-code/loud-badger-55 */
+
+@media (max-width: 768px) {
+  .header-left {
+      flex-grow: 1;
+  }
+
+  .title {
+      font-size: 18px;
+  }
+
+  .login-btn {
+      padding: 8px 12px;
+      font-size: 14px;
+  }
+}
+
+/* Estilos para la página de Trabaja con Nosotros */
+
+/* Contenedor principal */
+#work-with-us-main {
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Contenedor de las secciones principales */
+#work-with-us-container {
+  display: flex;
+  margin-top: 150px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+/* Estilos comunes para las secciones principales */
+.work-section {
+  width: 48%;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Títulos de las secciones */
+.work-section h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* Estilos para el formulario */
+#work-form-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+#work-form-right input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #e0e0e0;
+}
+
+/* Botones generales */
+.work-button, #work-form-right button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #df1b1b;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.work-button:hover, #work-form-right button:hover {
+  background-color: #333;
+}
+
+/* Sección central */
+#work-central-section {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+#logo-circle {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #000000;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.circular-imagen {
+  width: 150px; 
+  height: 150px;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover; /* Ajusta la imagen para que se recorte adecuadamente */
+}
+
+#additional-info {
+  color: white;
+  flex: 1;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Sección inferior */
+#work-bottom-section {
+  color: white;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  #work-with-us-container {
+      flex-direction: column;
+  }
+
+  .work-section {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  #work-central-section {
+      flex-direction: column;
+  }
+
+  #logo-circle {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+}
+/* Estilos para la página de soporte */
+
+/* El contenedor principal de la página */
+#pagina-soporte {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* El contenedor del formulario */
+#contenedor-formulario {
+  margin-top: 150px;
+  background-color: #000000;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* El título principal de la página */
+#titulo-soporte {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* El formulario en sí */
+#formulario-soporte {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Las etiquetas de los campos del formulario */
+#formulario-soporte label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Los campos de entrada de texto y área de texto */
+#formulario-soporte input,
+#formulario-soporte textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+/* El área de texto para la reclamación */
+#reclamacion {
+  height: 150px;
+  resize: vertical;
+}
+
+/* El botón de enviar */
+#boton-enviar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #df1b1b;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Cambio de color del botón cuando el ratón pasa por encima */
+#boton-enviar:hover {
+  background-color: #b81616;
+}
+
+/* Ajustes para pantallas pequeñas como móviles */
+@media (max-width: 768px) {
+  #pagina-soporte {
+    padding: 10px;
+  }
+
+  #contenedor-formulario {
+    padding: 15px;
+  }
+}
+
+iframe{
+display: flex;
+}
+
+#google{
+  text-align: center;
+}
+
+/*Order.html*/
+#order-google{
+  margin-top: 225px;
+  margin-left: 20px;
+}
+.vtc-cabecera {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vtc-boton-sesion {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.vtc-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.vtc-cuadricula-reserva {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .vtc-cuadricula-reserva {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+.vtc-formulario-reserva {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.vtc-titulo-principal {
+  margin-top: 70px;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.vtc-grupo-entrada {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.vtc-control-formulario {
+  margin-bottom: 1rem;
+}
+
+.vtc-control-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.vtc-control-formulario input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.vtc-grupo-fecha-hora {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.vtc-boton-fecha-hora {
+  padding: 0.75rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.vtc-planes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vtc-opcion-plan {
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.vtc-opcion-plan:hover {
+  background-color: #f9f9f9;
+}
+
+.vtc-radio-plan {
+  margin-right: 1rem;
+}
+
+.vtc-detalles-plan {
+  flex: 1;
+}
+
+.vtc-nombre-plan {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.vtc-descripcion-plan {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.vtc-precio-plan {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.vtc-boton-enviar {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.vtc-boton-enviar:hover {
+  background: #333;
+}
+
+#vtc-mapa {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .vtc-contenedor {
+      padding: 1rem;
+  }
+
+  .vtc-titulo-principal {
+      font-size: 2rem;
+  }
+
+  .vtc-grupo-fecha-hora {
+      grid-template-columns: 1fr;
+  }
+}
+

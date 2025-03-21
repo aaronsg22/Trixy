@@ -1,0 +1,136 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas frecuentes</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/fqa.css"
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <div class="header-left">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <a href="../index.html" alt="Logo Trixy" class="logo">
+                <img id="logo" src="../IMG/LOGO.png" width="45">
+            </a>
+            <h1 class="title">Trixy</h1>
+        </div>
+        <a href="../HTML/SignIn.html" class="login-btn">Iniciar Sesión</a>
+        
+        <nav class="sidebar">
+            <label for="menu-toggle" class="close-btn">×</label>
+            <a href="../HTML/WorkWithUs.html">Trabaja Con Nosotros</a>
+            <a href="../HTML/planes.html">Planes Premium</a>
+            <a href="../HTML/order.html">Pide tu Trixy</a>
+            <a href="../HTML/fqa.html">Preguntas Frecuentes</a>
+        </nav>
+    </header>
+<!-- Inicio del Framework del desplegable extraido de la parte de comunidad de V0, editado por nosotros -->
+    <main>
+        <main className="contenedor-principal">
+          <section className="seccion-preguntas">
+            <h2 id="fqa">Preguntas Frecuentes</h2>
+            
+              <div class="pregunta">
+                <button class="pregunta-toggle">
+                  <h3>¿Qué es una VTC?</h3>
+                  <span class="icono">+</span>
+                </button>
+                <div class="respuesta">
+                  <p>
+                    VTC significa Vehículo de Transporte con Conductor. Es un servicio de transporte profesional que requiere
+                    una licencia específica para operar.
+                  </p>
+                </div>
+              </div>
+            
+              <div class="pregunta">
+                <button class="pregunta-toggle">
+                  <h3>¿Cómo puedo solicitar un servicio?</h3>
+                  <span class="icono">+</span>
+                </button>
+                <div class="respuesta">
+                  <p>
+                    Puedes solicitar nuestros servicios a través de nuestra página web. También ofrecemos
+                    reservas anticipadas.
+                  </p>
+                </div>
+              </div>
+            
+
+              <div class="pregunta">
+                <button class="pregunta-toggle">
+                  <h3>¿Cuáles son los métodos de pago aceptados?</h3>
+                  <span class="icono">+</span>
+                </button>
+                <div class="respuesta">
+                  <p>
+                    Aceptamos pagos con tarjeta de crédito/débito y métodos de pago digital como PayPal.
+                  </p>
+                </div>
+              </div>
+      
+              <div class="pregunta">
+                <button class="pregunta-toggle">
+                  <h3>¿Qué áreas cubren sus servicios?</h3>
+                  <span class="icono">+</span>
+                </button>
+                <div class="respuesta">
+                  <p>
+                    Operamos en las principales ciudades españolas. Consulta nuestra web para ver la cobertura específica en tu
+                    zona.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pregunta">
+                <button class="pregunta-toggle">
+                  <h3>¿Cómo puedo trabajar como conductor?</h3>
+                  <span class="icono">+</span>
+                </button>
+                <div class="respuesta">
+                  <p>
+                    Para trabajar como conductor, necesitas obtener una licencia VTC. Podemos ayudarte en el proceso de
+                    obtención y formación. Visita el apartado trabaja con nosotros
+                  </p>
+                </div>
+              </div>
+
+
+
+              
+            </section>
+
+
+    </main>
+
+    <footer>
+      <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61573387371493" target="_blank" class="social-icon">
+              <img src="../IMG/FB.png" alt="Facebook" class="social-icon-img">
+          </a>
+          <a href="https://x.com/TrixySpain" target="_blank" class="social-icon">
+              <img src="../IMG/X.png" alt="X" class="social-icon-img">
+          </a>
+          <a href="https://www.instagram.com/trixy/" target="_blank" class="social-icon">
+              <img src="../IMG/IG.png" alt="Instagram" class="social-icon-img">
+          </a>
+      </div>
+      <div class="footer-buttons">
+          <a href="../HTML/support.html" class="footer-btn">Soporte</a>
+          <a href="../HTML/AMirRoyo.html" class="footer-btn">AMirRoyo</a> 
+      </div>
+  </footer>
+</body>
+<script>
+  document.querySelectorAll('.pregunta-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+          const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+          button.setAttribute('aria-expanded', !expanded);
+      });
+  });
+  </script>
+  <!-- Fin del Framework del desplegable extraido de la parte de comunidad de V0, editado por nosotros -->
+
+</html>

@@ -1,0 +1,114 @@
+/* Estilos para la página de planes de pago */
+
+/* Contenedor principal de los planes */
+#planes-pago {
+    max-width: 900px;
+    margin: 200px auto 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título principal */
+#planes-pago h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de los planes */
+.planes-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Estilo para cada plan individual */
+.plan {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 60px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre un plan */
+.plan:hover {
+    transform: translateY(-5px);
+}
+/*Eliminar ralla links*/
+.seleccionar-plan {
+text-decoration: none;
+}
+
+/* Estilo especial para el plan black */
+.plan.premium {
+    background-color: #f0f0f0;
+    border: 2px solid #df1b1b;
+}
+
+/* Título de cada plan */
+.plan h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Precio del plan */
+.plan .precio {
+    font-size: 28px;
+    color: #df1b1b;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Lista de características del plan */
+.plan ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.plan li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Añadir un check antes de cada característica */
+.plan li::before {
+    content: '✓';
+    color: #df1b1b;
+    position: absolute;
+    left: 0;
+}
+
+/* Botón para seleccionar el plan */
+.seleccionar-plan {
+    background-color: #df1b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.seleccionar-plan:hover {
+    background-color: #b81616;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    #planes-pago {
+        padding: 10px;
+    }
+
+    .plan {
+        width: 100%;
+        max-width: 300px;
+    }
+}
